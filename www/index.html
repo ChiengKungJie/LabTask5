@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Employee App</title>
+        <link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+        <script type="text/javascript" src="jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+<!----------------------------------------
+                Home Page
+------------------------------------------>
+        <div data-role="page" id="page-home" data-theme="b">
+            <div data-role="header" id="header">
+                <h1>Home Page</h1>
+            </div>
+            <br>
+            <div align="center">
+                <img src="img/simpleLogo.png">
+            </div>
+            <div data-role="content">
+                <a href="#page-employee" data-role="button" data-transition="flow" id="employee">
+                    <div>
+                        <p id="home-text">
+                        <b>Employee List</b>
+                        </p>
+                    </div>
+                </a>
+                <a href="#page-product" data-role="button" data-transition="flow" id="product">
+                    <div>
+                        <p id="home-text">
+                        <b>Products</b>
+                        </p>
+                    </div>
+                </a>
+                <a href="#page-contact" data-role="button" data-transition="flow" id="product">
+                    <div>
+                        <p id="home-text">
+                        <b>Contact Us</b>
+                        </p>
+                    </div>
+                </a>
+                <button id = "cordovaDevice">CORDOVA DEVICE</button>
+            </div>
+            <div data-role="footer" id="footer" align="right">
+                20DDT19F1002
+            </div>
+        </div>
+<!----------------------------------------
+                Employee Page
+------------------------------------------>
+        <div data-role="page" id="page-employee" data-theme="b">
+            <div data-role="header" id="header">
+                <a href="#page-home" data-role="button" data-icon="home" id="back">Home</a>
+                <h1>Employee List</h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" data-filter="true">
+                    <li data-role="list-divider">Employee Overview</li>
+                    <li><a href="#page-details1" data-role="button" data-transition="flip" data-icon="arrow-r" data-iconpos="right">
+                        <div>
+                            <img src="img/emp1.png" style="float: left;" width="75" height="75">
+                        </div>
+                        <div>
+                            <p>
+                            <b>Chieng Kung Jie</b>
+                            <br>Sales Representative
+                            </p>
+                        </div>
+                    </a>
+                    </li>
+                    <li><a href="#page-details2" data-role="button" data-transition="turn" data-icon="arrow-r" data-iconpos="right">
+                        <div>
+                            <img src="img/emp2.png" style="float: left;" width="75" height="75">
+                        </div>
+                        <div>
+                            <p>
+                            <b>Philip Ling</b>
+                            <br>Marketing
+                            </p>
+                        </div>
+                    </a>
+                    </li>
+                    <li><a href="#page-details3" data-role="button" data-transition="slidefade" data-icon="arrow-r" data-iconpos="right">
+                        <div>
+                            <img src="img/emp3.PNG" style="float: left;" width="75" height="75">
+                        </div>
+                        <div>
+                            <p>
+                            <b>Ruix Chieng</b>
+                            <br>Software Architect
+                            </p>
+                        </div>
+                    </a>
+                    </li>
+                    <li><a href="#page-details4" data-role="button" data-transition="slideup" data-icon="arrow-r" data-iconpos="right">
+                        <div>
+                            <img src="img/emp4.png" style="float: left;" width="75" height="75">
+                        </div>
+                        <div>
+                            <p>
+                            <b>Ong Han Lin</b>
+                            <br>Sale Representative
+                            </p>
+                        </div>
+                    </a>
+                    </li>
+                    <li><a href="#page-details5" data-role="button" data-transition="slidedown" data-icon="arrow-r" data-iconpos="right">
+                        <div>
+                            <img src="img/emp5.png" style="float: left;" width="75" height="75">
+                        </div>
+                        <div>
+                            <p>
+                            <b>Ol Abdul Aziz</b>
+                            <br>QA Manager
+                            </p>
+                        </div>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" id="footer" align="right">
+                20DDT19F1002
+            </div>
+        </div>
+<!----------------------------------------
+            Details Emp1 Page
+------------------------------------------>
+        <div data-role="page" id="page-details1" data-theme="b">
+            <div data-role="header" id="header">
+                <a href="#page-employee" data-role="button" data-icon="arrow-l" id="back">Back</a>
+                <h1>Employee Details</h1>
+            </div>
+            <div data-role="content">
+                <div>
+                    <img src="img/emp1.png" style="float: left;" width="75" height="75">
+                </div>
+                <div id="details">
+                        <b>Chieng Kung Jie</b>
+                        <br>Sale Representative
+                </div>
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <p>
+                            <strong>Seniority</strong>
+                            <br>3 years
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Age</strong>
+                            <br>26
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Email</strong>
+                            <br>acc363hh@gmail.com
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Call Office</strong>
+                            <br>084-614 1245
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Call Cell</strong>
+                            <br>012-345 6789
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" id="footer" align="right">
+                20DDT19F1002
+            </div>
+        </div>
+<!----------------------------------------
+            Details Emp2 Page
+------------------------------------------>
+        <div data-role="page" id="page-details2" data-theme="b">
+            <div data-role="header" id="header">
+                <a href="#page-employee" data-role="button" data-icon="arrow-l" id="back">Back</a>
+                <h1>Employee Details</h1>
+            </div>
+            <div data-role="content">
+                <div>
+                    <img src="img/emp2.png" style="float: left;" width="75" height="75">
+                </div>
+                <div id="details">
+                    <b>Philip Ling</b>
+                    <br>Marketing
+                </div>
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <p>
+                            <strong>Seniority</strong>
+                            <br>5 years
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Age</strong>
+                            <br>30
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Email</strong>
+                            <br>gka01v7@gmail.com
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Call Office</strong>
+                            <br>084-614 1249
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Call Cell</strong>
+                            <br>016-527 9521
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" id="footer" align="right">
+                20DDT19F1002
+            </div>
+        </div>
+<!----------------------------------------
+            Details Emp3 Page
+------------------------------------------>
+        <div data-role="page" id="page-details3" data-theme="b">
+            <div data-role="header" id="header">
+                <a href="#page-employee" data-role="button" data-icon="arrow-l" id="back">Back</a>
+                <h1>Employee Details</h1>
+            </div>
+            <div data-role="content">
+                <div>
+                    <img src="img/emp3.PNG" style="float: left;" width="75" height="75">
+                </div>
+                <div id="details">
+                    <b>Ruix Chieng</b>
+                    <br>Software Architect
+                </div>
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <p>
+                            <strong>Seniority</strong>
+                            <br>7 years
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Age</strong>
+                            <br>34
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Email</strong>
+                            <br>jsd8df3@gmail.com
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Call Office</strong>
+                            <br>084-614 1249
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Call Cell</strong>
+                            <br>019-841 1235
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" id="footer" align="right">
+                20DDT19F1002
+            </div>
+        </div>
+<!----------------------------------------
+            Details Emp4 Page
+------------------------------------------>
+        <div data-role="page" id="page-details4" data-theme="b">
+            <div data-role="header" id="header">
+                <a href="#page-employee" data-role="button" data-icon="arrow-l" id="back">Back</a>
+                <h1>Employee Details</h1>
+            </div>
+            <div data-role="content">
+                <div>
+                    <img src="img/emp4.png" style="float: left;" width="75" height="75">
+                </div>
+                <div id="details">
+                    <b>Ong Han Lin</b>
+                    <br>Sale Representative
+                </div>
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <p>
+                            <strong>Seniority</strong>
+                            <br>Half a Year
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Age</strong>
+                            <br>23
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Email</strong>
+                            <br>sdv4g6g@gmail.com
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Call Office</strong>
+                            <br>084-614 1245
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Call Cell</strong>
+                            <br>016-277 1650
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" id="footer" align="right">
+                20DDT19F1002
+            </div>
+        </div>
+<!----------------------------------------
+            Details Emp5 Page
+------------------------------------------>
+        <div data-role="page" id="page-details5" data-theme="b">
+            <div data-role="header" id="header">
+                <a href="#page-employee" data-role="button" data-icon="arrow-l" id="back">Back</a>
+                <h1>Employee Details</h1>
+            </div>
+            <div data-role="content">
+                <div>
+                    <img src="img/emp5.png" style="float: left;" width="75" height="75">
+                </div>
+                <div id="details">
+                    <b>Ol Abdul Aziz</b>
+                    <br>QA Manager
+                </div>
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <p>
+                            <strong>Seniority</strong>
+                            <br>2 years
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Age</strong>
+                            <br>26
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Email</strong>
+                            <br>pjo2s77a@gmail.com
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Call Office</strong>
+                            <br>084-614 1243
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Call Cell</strong>
+                            <br>012-358 2252
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" id="footer" align="right">
+                20DDT19F1002
+            </div>
+        </div>
+<!----------------------------------------
+            Products Page
+------------------------------------------>
+        <div data-role="page" id="page-product" data-theme="b">
+            <div data-role="header" id="header">
+                <a href="#page-home" data-role="button" data-icon="home" id="back">Home</a>
+                <h1>Products</h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" data-filter="true">
+                    <li><a href="#" data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right">
+                        <div>
+                            <img src="img/lamp.png" style="float: left;" width="75" height="75">
+                        </div>
+                        <div>
+                            <p>
+                            <b>Lamp</b>
+                            </p>
+                        </div>
+                    </a></li>
+                    <li><a href="#" data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right">
+                        <div>
+                            <img src="img/diningTable.png" style="float: left;" width="75" height="75">
+                        </div>
+                        <div>
+                            <p>
+                            <b>Dining Table</b>
+                            </p>
+                        </div>
+                    </a></li>
+                    <li><a href="#" data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right">
+                        <div>
+                            <img src="img/wardrobe.png" style="float: left;" width="75" height="75">
+                        </div>
+                        <div>
+                            <p>
+                            <b>Wardrobe</b>
+                            </p>
+                        </div>
+                    </a></li>
+                    <li><a href="#" data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right">
+                        <div>
+                            <img src="img/cabinetRack.png" style="float: left;" width="75" height="75">
+                        </div>
+                        <div>
+                            <p>
+                            <b>Cabinet Rack</b>
+                            </p>
+                        </div>
+                    </a></li>
+                    <li><a href="#" data-role="button" data-transition="slide" data-icon="arrow-r" data-iconpos="right">
+                        <div>
+                            <img src="img/sofa.png" style="float: left;" width="75" height="75">
+                        </div>
+                        <div>
+                            <p>
+                            <b>Sofa</b>
+                            </p>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
+            <div data-role="footer" id="footer" align="right">
+                20DDT19F1002
+            </div>
+        </div>
+<!----------------------------------------
+            Contact Page
+------------------------------------------>
+    <div data-role="page" id="page-contact" data-theme="b">
+        <div data-role="header" id="header">
+            <a href="#page-home" data-role="button" data-icon="home" id="back">Home</a>
+            <h1>Contact Us</h1>
+        </div>
+        <div data-role="content">
+            <form method="post">
+                <div data-role="fieldcontain">
+                    <label for="email">Email</label>
+                    <input type="email" id="email">
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="name">Name</label>
+                    <input type="name" id="email">
+                </div>
+                <input type="reset" value="Reset" data-inline="true">
+                <input type="submit" value="Submit" data-inline="true">
+            </form>
+        </div>
+        <div data-role="footer" id="footer" align="right">
+            20DDT19F1002
+        </div>
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+        <script>
+            document.getElementById("employee").addEventListener("click", EmployeeAlert);
+            function EmployeeAlert() {
+                alert("This is some basic information of our company employees.");
+            }
+
+            document.getElementById("product").addEventListener("click", ProductAlert);
+            function ProductAlert() {
+                alert("These are some products launched by our company.");
+            }
+        </script>
+    </body>
+</html>
